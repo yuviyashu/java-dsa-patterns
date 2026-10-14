@@ -25,10 +25,13 @@ flowchart TB
     style row1 fill:none,stroke:none
     style row2 fill:none,stroke:none
     classDef done fill:#2da44e,color:#fff,stroke:#2da44e
+    classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
-    class A done
+    class A inprogress
     class B,C,D,E,F,G next
 ```
+
+🟩 Done · 🟨 In progress · ⬜ Next
 
 ## Progress
 
