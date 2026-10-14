@@ -26,8 +26,8 @@ flowchart TB
     style row2 fill:none,stroke:none
     classDef done fill:#2da44e,color:#fff,stroke:#2da44e
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
-    class A,B,C done
-    class D,E,F,G next
+    class A done
+    class B,C,D,E,F,G next
 ```
 
 ## Progress
