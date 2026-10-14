@@ -17,28 +17,29 @@ public final class TwoSum {
 
     /**
      * Returns the indices {@code [i, j]} (with {@code i < j}) of the two elements summing to
-     * {@code target}.
+     * {@code target}, or an empty array if no such pair exists.
      *
-     * @throws IllegalArgumentException if {@code nums} is null or no such pair exists
+     * @throws IllegalArgumentException if {@code nums} is null
      */
     public static int[] twoSum(int[] nums, int target) {
+
         if (nums == null) {
             throw new IllegalArgumentException("nums must not be null");
         }
 
-        Map<Integer, Integer> indexByValue = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            // long arithmetic avoids overflow when target and nums[i] are near int bounds
-            long complement = (long) target - nums[i];
-            if (complement >= Integer.MIN_VALUE && complement <= Integer.MAX_VALUE) {
-                Integer j = indexByValue.get((int) complement);
-                if (j != null) {
-                    return new int[] {j, i};
-                }
-            }
-            indexByValue.put(nums[i], i);
-        }
+        Map<Integer, Integer> board = new HashMap<>();
 
-        throw new IllegalArgumentException("No two elements sum to " + target);
+        for (int i = 0; i < nums.length; i++) {
+            int diff = target - nums[i];
+            if (board.containsKey(diff)) {
+                return new int[]{board.get(diff), i};
+            } else {
+                board.put(nums[i], i);
+            }
+        }
+        return new int[]{};
     }
+
+
+
 }

@@ -25,7 +25,7 @@ class TwoSumTest {
     @Test
     void doesNotReuseSameElement() {
         // 5 + 5 = 10, but there is only one 5, so no valid pair exists
-        assertThrows(IllegalArgumentException.class, () -> TwoSum.twoSum(new int[] {5, 1, 2}, 10));
+        assertArrayEquals(new int[] {}, TwoSum.twoSum(new int[] {5, 1, 2}, 10));
     }
 
     @Test
@@ -46,13 +46,18 @@ class TwoSumTest {
     }
 
     @Test
-    void throwsWhenNoPairExists() {
-        assertThrows(IllegalArgumentException.class, () -> TwoSum.twoSum(new int[] {1, 2, 3}, 100));
+    void returnsEmptyWhenNoPairExists() {
+        assertArrayEquals(new int[] {}, TwoSum.twoSum(new int[] {1, 2, 3}, 100));
     }
 
     @Test
-    void throwsOnEmptyArray() {
-        assertThrows(IllegalArgumentException.class, () -> TwoSum.twoSum(new int[] {}, 0));
+    void returnsEmptyForEmptyArray() {
+        assertArrayEquals(new int[] {}, TwoSum.twoSum(new int[] {}, 0));
+    }
+
+    @Test
+    void returnsEmptyForSingleElement() {
+        assertArrayEquals(new int[] {}, TwoSum.twoSum(new int[] {5}, 5));
     }
 
     @Test
