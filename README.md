@@ -1,5 +1,7 @@
 # Java DSA Patterns
 
+[![CI](https://github.com/yuviyashu/java-dsa-patterns/actions/workflows/ci.yml/badge.svg)](https://github.com/yuviyashu/java-dsa-patterns/actions/workflows/ci.yml)
+
 Data Structures & Algorithms problems solved in **Java**, organized by **pattern**,
 with unit tests and complexity analysis for every solution.
 
