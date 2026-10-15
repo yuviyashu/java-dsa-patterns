@@ -40,6 +40,7 @@ flowchart TB
 | # | Problem | Pattern | Time | Space | Solution |
 |---|---------|---------|------|-------|----------|
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Hashing | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/hashing/TwoSum.java) |
+| 2 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Hashing | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/hashing/ContainsDuplicate.java) |
 
 ## Pattern Notes
 
