@@ -29,7 +29,7 @@ flowchart TB
     classDef done fill:#2da44e,color:#fff,stroke:#2da44e
     classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
-    class A inprogress
+    class A done
     class B,C,D,E,F,G next
 ```
 
@@ -41,6 +41,9 @@ flowchart TB
 |---|---------|---------|------|-------|----------|
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Hashing | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/hashing/TwoSum.java) |
 | 2 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Hashing | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/hashing/ContainsDuplicate.java) |
+| 3 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Hashing | O(n·k log k) | O(n·k) | [Java](src/main/java/com/yuvaraj/dsa/hashing/GroupAnagrams.java) |
+
+<sub>n = number of strings, k = length of the longest string</sub>
 
 ## Pattern Notes
 
