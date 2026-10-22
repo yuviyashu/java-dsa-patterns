@@ -27,52 +27,36 @@ public final class ThreeSum {
      * @throws NullPointerException if {@code nums} is null
      */
     public static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> resultList = new ArrayList<>();
         Arrays.sort(nums);
-        int size = nums.length;
-        int left =0;
-        int right = size-1;
-        for(int i = 0 ; i<=size-3; i++){
+        List<List<Integer>> resultLists = new ArrayList<>();
+
+        for(int i=0;i<nums.length-2;i++){
             if(i>0 && nums[i] == nums[i-1]){
                 continue;
             }
-
-            if(nums[i]> 0){
-                break;
-            }
-
-            left = i+1;
-            right = size-1;
-
+            if(nums[i] > 0) break;
+            int left = i+1;
+            int right = nums.length-1;
             while(left<right) {
-
                 int sum = nums[i] + nums[left] + nums[right];
-                if (sum > 0) {
-                    right--;
-                } else if (sum < 0) {
+                if (sum < 0) {
                     left++;
+                } else if (sum > 0) {
+                    right--;
                 } else {
-                    List<Integer> list = new ArrayList<Integer>();
-                    list.add(nums[i]);
-                    list.add(nums[left]);
-                    list.add(nums[right]);
-
-                    resultList.add(list);
-
+                    resultLists.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     while(left < right && nums[left] == nums[left+1]){
                         left++;
                     }
-
                     while(left < right && nums[right] == nums[right-1]){
                         right--;
                     }
-
                     left++;
                     right--;
-
                 }
             }
         }
-        return resultList;
+
+        return resultLists;
     }
 }
