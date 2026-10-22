@@ -47,6 +47,7 @@ flowchart TB
 | 5 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Two Pointers | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/twopointers/IsPalindrome.java) |
 | 6 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Two Pointers | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/twopointers/MaxArea.java) |
 | 7 | [3Sum](https://leetcode.com/problems/3sum/) | Two Pointers | O(n²) | O(1)* | [Java](src/main/java/com/yuvaraj/dsa/twopointers/ThreeSum.java) |
+| 8 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Sliding Window | O(n) | O(min(n, charset)) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/LongestSubstring.java) |
 
 <sub>Group Anagrams: n = number of strings, k = length of the longest string ·
 \* excluding output and sort space</sub>
