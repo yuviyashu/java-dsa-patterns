@@ -30,8 +30,8 @@ flowchart TB
     classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
     class A done
-    class C inprogress
-    class B,D,E,F,G next
+    class B,C inprogress
+    class D,E,F,G next
 ```
 
 🟩 Done · 🟨 In progress · ⬜ Next
@@ -44,6 +44,7 @@ flowchart TB
 | 2 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Hashing | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/hashing/ContainsDuplicate.java) |
 | 3 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Hashing | O(n·k log k) | O(n·k) | [Java](src/main/java/com/yuvaraj/dsa/hashing/GroupAnagrams.java) |
 | 4 | Max Sum Subarray of Size K | Sliding Window | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/MaxSumSubarray.java) |
+| 5 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Two Pointers | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/twopointers/IsPalindrome.java) |
 
 <sub>n = number of strings, k = length of the longest string</sub>
 
@@ -52,6 +53,10 @@ flowchart TB
 **Hashing**: Like a hotel reception register. Instead of knocking on every door
 to find a guest, you look up the register and get the room number instantly.
 Use it when you need O(1) "have I seen this before?" lookups.
+
+**Two Pointers**: Like two people searching a sorted bookshelf from opposite ends
+and walking toward each other. Each step safely eliminates options, turning
+O(n²) brute force into O(n).
 
 **Sliding Window**: Like a row of chairs with a fixed or flexible frame over it.
 Instead of recounting every chair each time, add the one entering the frame and
