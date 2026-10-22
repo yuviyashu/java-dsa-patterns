@@ -29,8 +29,8 @@ flowchart TB
     classDef done fill:#2da44e,color:#fff,stroke:#2da44e
     classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
-    class A done
-    class B,C inprogress
+    class A,B done
+    class C inprogress
     class D,E,F,G next
 ```
 
@@ -46,8 +46,10 @@ flowchart TB
 | 4 | Max Sum Subarray of Size K | Sliding Window | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/MaxSumSubarray.java) |
 | 5 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Two Pointers | O(n) | O(n) | [Java](src/main/java/com/yuvaraj/dsa/twopointers/IsPalindrome.java) |
 | 6 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Two Pointers | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/twopointers/MaxArea.java) |
+| 7 | [3Sum](https://leetcode.com/problems/3sum/) | Two Pointers | O(n²) | O(1)* | [Java](src/main/java/com/yuvaraj/dsa/twopointers/ThreeSum.java) |
 
-<sub>n = number of strings, k = length of the longest string</sub>
+<sub>Group Anagrams: n = number of strings, k = length of the longest string ·
+\* excluding output and sort space</sub>
 
 ## Pattern Notes
 
