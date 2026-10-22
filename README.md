@@ -29,8 +29,7 @@ flowchart TB
     classDef done fill:#2da44e,color:#fff,stroke:#2da44e
     classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
-    class A,B done
-    class C inprogress
+    class A,B,C done
     class D,E,F,G next
 ```
 
@@ -48,6 +47,7 @@ flowchart TB
 | 6 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Two Pointers | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/twopointers/MaxArea.java) |
 | 7 | [3Sum](https://leetcode.com/problems/3sum/) | Two Pointers | O(n²) | O(1)* | [Java](src/main/java/com/yuvaraj/dsa/twopointers/ThreeSum.java) |
 | 8 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Sliding Window | O(n) | O(min(n, charset)) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/LongestSubstring.java) |
+| 9 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Sliding Window | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/MaxProfit.java) |
 
 <sub>Group Anagrams: n = number of strings, k = length of the longest string ·
 \* excluding output and sort space</sub>
