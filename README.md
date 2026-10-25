@@ -17,11 +17,11 @@ Each solution includes:
 flowchart TB
     subgraph row1 [" "]
         direction LR
-        A[Hashing] --> B[Two Pointers] --> C[Sliding Window] --> D[Graphs]
+        A[Hashing] --> B[Two Pointers] --> C[Sliding Window] --> H[Binary Search]
     end
     subgraph row2 [" "]
         direction LR
-        E[Backtracking] --> F[Heap / Priority Queue] --> G[Dynamic Programming]
+        D[Graphs] --> E[Backtracking] --> F[Heap / Priority Queue] --> G[Dynamic Programming]
     end
     row1 --> row2
     style row1 fill:none,stroke:none
@@ -30,6 +30,7 @@ flowchart TB
     classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
     class A,B,C done
+    class H inprogress
     class D,E,F,G next
 ```
 
@@ -48,9 +49,11 @@ flowchart TB
 | 7 | [3Sum](https://leetcode.com/problems/3sum/) | Two Pointers | O(n²) | O(1)* | [Java](src/main/java/com/yuvaraj/dsa/twopointers/ThreeSum.java) |
 | 8 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Sliding Window | O(n) | O(min(n, charset)) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/LongestSubstring.java) |
 | 9 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Sliding Window | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/MaxProfit.java) |
+| 10 | [Binary Search](https://leetcode.com/problems/binary-search/) | Binary Search | O(n log n)† | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/BinarySearch.java) |
 
 <sub>Group Anagrams: n = number of strings, k = length of the longest string ·
-\* excluding output and sort space</sub>
+\* excluding output and sort space ·
+† includes sorting the input; the search itself is O(log n)</sub>
 
 ## Pattern Notes
 
@@ -65,6 +68,10 @@ O(n²) brute force into O(n).
 **Sliding Window**: Like a row of chairs with a fixed or flexible frame over it.
 Instead of recounting every chair each time, add the one entering the frame and
 drop the one leaving. Use it for contiguous subarray/substring problems.
+
+**Binary Search**: Like finding a word in a dictionary. Open it in the middle,
+see whether your word comes before or after that page, and throw away the half
+it can't be in. Use it on sorted (or partly sorted) data to go from O(n) to O(log n).
 
 ## Run the Tests
 
