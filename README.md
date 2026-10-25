@@ -29,8 +29,7 @@ flowchart TB
     classDef done fill:#2da44e,color:#fff,stroke:#2da44e
     classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
-    class A,B,C done
-    class H inprogress
+    class A,B,C,H done
     class D,E,F,G next
 ```
 
@@ -51,6 +50,7 @@ flowchart TB
 | 9 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Sliding Window | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/MaxProfit.java) |
 | 10 | [Binary Search](https://leetcode.com/problems/binary-search/) | Binary Search | O(n log n)† | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/BinarySearch.java) |
 | 11 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Binary Search | O(log n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/SearchRange.java) |
+| 12 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Binary Search | O(log n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/SearchInRotatedArray.java) |
 
 <sub>Group Anagrams: n = number of strings, k = length of the longest string ·
 \* excluding output and sort space ·
