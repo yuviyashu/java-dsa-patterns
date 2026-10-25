@@ -50,6 +50,7 @@ flowchart TB
 | 8 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Sliding Window | O(n) | O(min(n, charset)) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/LongestSubstring.java) |
 | 9 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Sliding Window | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/slidingwindow/MaxProfit.java) |
 | 10 | [Binary Search](https://leetcode.com/problems/binary-search/) | Binary Search | O(n log n)† | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/BinarySearch.java) |
+| 11 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Binary Search | O(log n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/SearchRange.java) |
 
 <sub>Group Anagrams: n = number of strings, k = length of the longest string ·
 \* excluding output and sort space ·
