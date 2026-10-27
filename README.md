@@ -17,7 +17,7 @@ Each solution includes:
 flowchart TB
     subgraph row1 [" "]
         direction LR
-        A[Hashing] --> B[Two Pointers] --> C[Sliding Window] --> H[Binary Search]
+        A[Hashing] --> B[Two Pointers] --> C[Sliding Window] --> H[Binary Search] --> I[Linked List]
     end
     subgraph row2 [" "]
         direction LR
@@ -30,6 +30,7 @@ flowchart TB
     classDef inprogress fill:#bf8700,color:#fff,stroke:#bf8700
     classDef next fill:#f6f8fa,color:#24292f,stroke:#8c959f
     class A,B,C,H done
+    class I inprogress
     class D,E,F,G next
 ```
 
@@ -51,6 +52,7 @@ flowchart TB
 | 10 | [Binary Search](https://leetcode.com/problems/binary-search/) | Binary Search | O(n log n)† | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/BinarySearch.java) |
 | 11 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Binary Search | O(log n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/SearchRange.java) |
 | 12 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Binary Search | O(log n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/binarysearch/SearchInRotatedArray.java) |
+| 13 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Linked List | O(n) | O(1) | [Java](src/main/java/com/yuvaraj/dsa/linkedlist/LinkedList.java) |
 
 <sub>Group Anagrams: n = number of strings, k = length of the longest string ·
 \* excluding output and sort space ·
@@ -73,6 +75,11 @@ drop the one leaving. Use it for contiguous subarray/substring problems.
 **Binary Search**: Like finding a word in a dictionary. Open it in the middle,
 see whether your word comes before or after that page, and throw away the half
 it can't be in. Use it on sorted (or partly sorted) data to go from O(n) to O(log n).
+
+**Linked List**: Like a conga line where each person only holds the shoulder of
+the one in front. There's no jumping to the 5th person; you walk from the leader.
+Most problems come down to carefully re-pointing who holds whom, often with
+`prev` / `curr` / `next` pointers.
 
 ## Run the Tests
 
