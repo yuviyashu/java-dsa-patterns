@@ -1,6 +1,8 @@
 package com.yuvaraj.dsa.linkedlist;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -80,5 +82,72 @@ class LinkedListTest {
         LinkedList list = listOf(-1, 0, 0, -1, 5);
         list.reverseLinkedList();
         assertEquals("5->-1->0->0->-1->null", list.toString());
+    }
+
+    // --- hasCycle ---
+
+    @Test
+    void noCycleInStraightList() {
+        assertFalse(listOf(1, 2, 3, 4, 5).hasCycle());
+    }
+
+    @Test
+    void noCycleInSingleNode() {
+        assertFalse(new LinkedList(1).hasCycle());
+    }
+
+    @Test
+    void noCycleInTwoNodes() {
+        assertFalse(listOf(1, 2).hasCycle());
+    }
+
+    @Test
+    void detectsCycleBackToMiddle() {
+        // 3 -> 2 -> 0 -> -4 -> back to 2
+        LinkedList list = listOf(3, 2, 0, -4);
+        list.linkTailTo(1);
+        assertTrue(list.hasCycle());
+    }
+
+    @Test
+    void detectsCycleBackToHead() {
+        LinkedList list = listOf(1, 2, 3);
+        list.linkTailTo(0);
+        assertTrue(list.hasCycle());
+    }
+
+    @Test
+    void detectsTwoNodeCycle() {
+        LinkedList list = listOf(1, 2);
+        list.linkTailTo(0);
+        assertTrue(list.hasCycle());
+    }
+
+    @Test
+    void detectsSingleNodePointingToItself() {
+        LinkedList list = new LinkedList(1);
+        list.linkTailTo(0);
+        assertTrue(list.hasCycle());
+    }
+
+    @Test
+    void detectsCycleOnlyAtTail() {
+        // tail points to itself after a long straight run
+        LinkedList list = listOf(1, 2, 3, 4, 5, 6, 7);
+        list.linkTailTo(6);
+        assertTrue(list.hasCycle());
+    }
+
+    @Test
+    void noCycleWithDuplicateValues() {
+        // equal values must not be mistaken for the same node
+        assertFalse(listOf(7, 7, 7, 7).hasCycle());
+    }
+
+    @Test
+    void noCycleAfterReverse() {
+        LinkedList list = listOf(1, 2, 3);
+        list.reverseLinkedList();
+        assertFalse(list.hasCycle());
     }
 }

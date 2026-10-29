@@ -2,10 +2,12 @@ package com.yuvaraj.dsa.linkedlist;
 
 /**
  * Problem: https://leetcode.com/problems/reverse-linked-list/
+ *          https://leetcode.com/problems/linked-list-cycle/
  * Pattern: Linked List
- * Intuition: Like a conga line turning around — walk down the line and have each person let go of
- * the one in front and grab the one behind instead; the last person becomes the new leader.
- * Time: append O(1), reverse O(n)   Space: O(1) extra for reverse
+ * Intuition: Reverse — like a conga line turning around: each person lets go of the one in front
+ * and grabs the one behind instead. Cycle — like two runners on a track, one twice as fast: on a
+ * loop the fast one always laps the slow one; on a straight road it just reaches the end.
+ * Time: append O(1), reverse O(n), hasCycle O(n)   Space: O(1) extra for reverse and hasCycle
  */
 public class LinkedList {
 
@@ -90,6 +92,39 @@ public class LinkedList {
             curr = next;
         }
 
+    }
+
+    /**
+     * Returns whether the list loops back on itself, using Floyd's fast and slow pointers.
+     *
+     * @return {@code true} if following {@code next} pointers never reaches {@code null}
+     */
+    public boolean hasCycle() {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Test helper: points the tail's {@code next} back at the node at {@code index}, creating a
+     * cycle. The public API can't create one, so tests need this to exercise {@link #hasCycle()}.
+     * Once called, {@link #toString()} and {@link #reverseLinkedList()} would loop forever.
+     */
+    void linkTailTo(int index) {
+        Node target = head;
+        for (int i = 0; i < index; i++) {
+            target = target.next;
+        }
+        tail.next = target;
     }
 
     /**
