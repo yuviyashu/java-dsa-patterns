@@ -3,11 +3,14 @@ package com.yuvaraj.dsa.linkedlist;
 /**
  * Problem: https://leetcode.com/problems/reverse-linked-list/
  *          https://leetcode.com/problems/linked-list-cycle/
+ *          https://leetcode.com/problems/linked-list-cycle-ii/
  * Pattern: Linked List
  * Intuition: Reverse — like a conga line turning around: each person lets go of the one in front
  * and grabs the one behind instead. Cycle — like two runners on a track, one twice as fast: on a
- * loop the fast one always laps the slow one; on a straight road it just reaches the end.
- * Time: append O(1), reverse O(n), hasCycle O(n)   Space: O(1) extra for reverse and hasCycle
+ * loop the fast one always laps the slow one; on a straight road it just reaches the end. Cycle
+ * start — after they meet, send one runner back to the start line; walking at the same pace, the
+ * two meet again exactly where the loop begins.
+ * Time: append O(1), reverse / hasCycle / findCycleStart O(n)   Space: O(1) extra
  */
 public class LinkedList {
 
@@ -113,6 +116,35 @@ public class LinkedList {
         }
         return false;
     }
+
+    /**
+     * Returns the value of the node where the cycle begins, using Floyd's algorithm: once the fast
+     * and slow pointers meet, restart one from {@code head} and step both one node at a time.
+     *
+     * @return the value of the first node in the cycle, or {@link Integer#MIN_VALUE} if the list
+     *     has no cycle
+     */
+    public int findCycleStart(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next !=null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast){
+                 slow = head;
+
+                 while( slow != fast){
+                     slow = slow.next;
+                     fast = fast.next;
+                 }
+                 return slow.val;
+            }
+        }
+        return Integer.MIN_VALUE;
+    }
+
 
     /**
      * Test helper: points the tail's {@code next} back at the node at {@code index}, creating a

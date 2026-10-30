@@ -150,4 +150,74 @@ class LinkedListTest {
         list.reverseLinkedList();
         assertFalse(list.hasCycle());
     }
+
+    // --- findCycleStart ---
+
+    @Test
+    void findsCycleStartInMiddle() {
+        // 3 -> 2 -> 0 -> -4 -> back to 2
+        LinkedList list = listOf(3, 2, 0, -4);
+        list.linkTailTo(1);
+        assertEquals(2, list.findCycleStart());
+    }
+
+    @Test
+    void findsCycleStartAtHead() {
+        LinkedList list = listOf(1, 2, 3, 4);
+        list.linkTailTo(0);
+        assertEquals(1, list.findCycleStart());
+    }
+
+    @Test
+    void findsCycleStartInTwoNodeLoop() {
+        LinkedList list = listOf(1, 2);
+        list.linkTailTo(0);
+        assertEquals(1, list.findCycleStart());
+    }
+
+    @Test
+    void findsCycleStartWhenSingleNodePointsToItself() {
+        LinkedList list = new LinkedList(42);
+        list.linkTailTo(0);
+        assertEquals(42, list.findCycleStart());
+    }
+
+    @Test
+    void findsCycleStartWhenTailPointsToItself() {
+        LinkedList list = listOf(1, 2, 3, 4, 5, 6, 7);
+        list.linkTailTo(6);
+        assertEquals(7, list.findCycleStart());
+    }
+
+    @Test
+    void findsCycleStartAfterLongRunIntoSmallLoop() {
+        // 10 nodes before the loop, then a 3-node loop: 11 -> 12 -> 13 -> back to 11
+        LinkedList list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
+        list.linkTailTo(10);
+        assertEquals(11, list.findCycleStart());
+    }
+
+    @Test
+    void findsCycleStartAtEveryPosition() {
+        for (int start = 0; start < 8; start++) {
+            LinkedList list = listOf(100, 101, 102, 103, 104, 105, 106, 107);
+            list.linkTailTo(start);
+            assertEquals(100 + start, list.findCycleStart(), "cycle starting at index " + start);
+        }
+    }
+
+    @Test
+    void returnsMinValueWhenNoCycle() {
+        assertEquals(Integer.MIN_VALUE, listOf(1, 2, 3).findCycleStart());
+    }
+
+    @Test
+    void returnsMinValueForSingleNodeWithoutCycle() {
+        assertEquals(Integer.MIN_VALUE, new LinkedList(5).findCycleStart());
+    }
+
+    @Test
+    void returnsMinValueWithDuplicatesButNoCycle() {
+        assertEquals(Integer.MIN_VALUE, listOf(7, 7, 7).findCycleStart());
+    }
 }
